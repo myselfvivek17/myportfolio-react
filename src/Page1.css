@@ -1,0 +1,14 @@
+.page1{
+    min-height: 100svh; display: flex; min-width: calc(100vw - 28px);
+}
+@media screen and (max-width:900px){
+    .page1{
+        flex-direction: column;
+    }
+    .imgContainer{
+        width: 100%;
+    }
+    .TxtA{
+        width: 100%;
+    }
+}

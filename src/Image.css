@@ -1,0 +1,28 @@
+.imgContainer{
+    background: rgb(24,24,35);
+    background: linear-gradient(90deg, rgba(24,24,35,1) 0%, rgba(25,24,35,1) 100%);
+    /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(45,45,45,1) 100%); */
+    width:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+img{
+    width: 70%;
+}
+.observe1{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(22%);
+    transition: all 2s;
+}
+.show1{
+    opacity: 1;
+    filter:blur(0);
+    transform:translateX(0);
+}
+@media(prefers-reduced-motion){
+    .observe1{
+        transition: none;
+    }
+}

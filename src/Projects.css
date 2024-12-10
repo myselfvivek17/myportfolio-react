@@ -1,0 +1,60 @@
+.card {
+    background-color: #181823;
+    overflow: hidden;
+    margin: 20px;
+    grid-row: span 2;
+  }
+@media (prefers-reduced-motion:no-preference){
+.card{
+  scale: .8;
+  opacity: 0;
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  to {scale: 1;opacity: 1;}
+}
+}
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .text {
+    padding: 40px;
+  }
+  
+  .text h2 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+  
+  .text p {
+    font-size: 16px;
+    margin-bottom: 0;
+    color: #8491A0;
+  }
+.layout{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.viewmore{
+    width: 300px;
+    height: 60px;
+    background-color: black;
+    border: solid 1px #5221e5;
+    font-size: large;
+}
+
+@media screen and (max-width:700px ){
+    .layout{
+        grid-template-columns: repeat(1,1fr);
+    }
+    
+}

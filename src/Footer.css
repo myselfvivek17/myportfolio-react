@@ -1,0 +1,26 @@
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .footer-content {
+    padding-left: 25px;
+    padding-right: 25px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 95%;
+  }
+  @media screen and (max-width:700px ){
+    .footer-content{
+        flex-direction: column;
+    }
+    .footer-form{
+        width: 100%;
+    }
+    
+}  
