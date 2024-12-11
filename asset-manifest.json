@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/myportfolio-react/static/css/main.64981afd.css",
+    "main.js": "/myportfolio-react/static/js/main.1a1d99ab.js",
+    "static/js/453.83234151.chunk.js": "/myportfolio-react/static/js/453.83234151.chunk.js",
+    "static/media/womensafety.png": "/myportfolio-react/static/media/womensafety.284d5b050c729dd0d1db.png",
+    "static/media/searcheng.png": "/myportfolio-react/static/media/searcheng.5ecb4a864184499dd33f.png",
+    "static/media/quiz.png": "/myportfolio-react/static/media/quiz.1df39de601406ae57ec8.png",
+    "static/media/pgm.png": "/myportfolio-react/static/media/pgm.6ad42a0f4aefcd9e3905.png",
+    "static/media/Telegrambots.png": "/myportfolio-react/static/media/Telegrambots.8ae0a06845c4c4526750.png",
+    "static/media/himg.png": "/myportfolio-react/static/media/himg.20e274ffb876617f65a0.png",
+    "static/media/notetaker.png": "/myportfolio-react/static/media/notetaker.1c998888cec1f3481be0.png",
+    "static/media/weather.jpg": "/myportfolio-react/static/media/weather.fa5054198634eba4ac36.jpg",
+    "static/media/yourcareer.png": "/myportfolio-react/static/media/yourcareer.7e94dcd3807dee84ffc6.png",
+    "static/media/instagram.png": "/myportfolio-react/static/media/instagram.75e0546a6b5abe4c0506.png",
+    "static/media/communication.png": "/myportfolio-react/static/media/communication.e8779962fbb49839e811.png",
+    "static/media/linkedin.png": "/myportfolio-react/static/media/linkedin.f249b38224ca41a0b909.png",
+    "index.html": "/myportfolio-react/index.html",
+    "main.64981afd.css.map": "/myportfolio-react/static/css/main.64981afd.css.map",
+    "main.1a1d99ab.js.map": "/myportfolio-react/static/js/main.1a1d99ab.js.map",
+    "453.83234151.chunk.js.map": "/myportfolio-react/static/js/453.83234151.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.64981afd.css",
+    "static/js/main.1a1d99ab.js"
+  ]
+}
