@@ -1,0 +1,58 @@
+.data-me {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border-radius: var(--radius-md, 14px);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid var(--card-accent, var(--color-accent, #3dd6a5));
+  overflow: hidden;
+  transition: transform 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.data-me:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.data-me .number {
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1;
+  color: rgba(156, 163, 150, 0.15);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.data-me .name h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 600;
+  font-family: var(--font-body, "DM Sans", sans-serif);
+}
+
+.data-me .description {
+  color: var(--color-muted, #9ca396);
+  font-size: clamp(0.88rem, 1.6vw, 0.95rem);
+  line-height: 1.6;
+  max-width: 30ch;
+}
+
+@media screen and (max-width: 700px) {
+  .data-me .description {
+    max-width: none;
+  }
+
+  .data-me .number {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+}

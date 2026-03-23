@@ -1,0 +1,164 @@
+.resume-section {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.resume-section:first-of-type {
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+  padding-top: 0;
+  border-top: none;
+}
+
+.resume-section__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted, #9ca396);
+}
+
+.resume-section__title {
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: clamp(1.35rem, 3.5vw, 2rem);
+  margin: 0 0 1.25rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.resume-card {
+  position: relative;
+  background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0)
+    ),
+    var(--color-surface, #151614);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid var(--color-accent, #3dd6a5);
+  border-radius: var(--radius-md, 14px);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.resume-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(61, 214, 165, 0.1);
+  border-left-color: var(--color-accent, #3dd6a5);
+}
+
+/* Timeline dot */
+.resume-card::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 1.75rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent, #3dd6a5);
+  border: 3px solid var(--color-bg, #070807);
+  box-shadow: 0 0 12px rgba(61, 214, 165, 0.4);
+  z-index: 1;
+}
+
+.resume-card__header {
+  margin-bottom: 1rem;
+}
+
+.resume-card__org {
+  margin: 0;
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.resume-card__role {
+  margin: 0.35rem 0 0;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 600;
+  color: var(--color-accent, #3dd6a5);
+}
+
+.resume-card__dates {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-muted, #9ca396);
+}
+
+.resume-card__list {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--color-muted, #9ca396);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  line-height: 1.65;
+}
+
+.resume-card__list li {
+  margin-bottom: 0.65rem;
+}
+
+.resume-card__list li:last-child {
+  margin-bottom: 0;
+}
+
+.resume-card__list strong {
+  color: var(--color-text, #f4f3ef);
+  font-weight: 600;
+}
+
+.resume-card__body {
+  margin: 0;
+  color: var(--color-muted, #9ca396);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  line-height: 1.65;
+}
+
+.edu-grid {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+@media (min-width: 700px) {
+  .edu-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.edu-card__school {
+  margin: 0;
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.edu-card__loc {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-muted, #9ca396);
+}
+
+.edu-card__degree {
+  margin: 0.75rem 0 0;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  color: var(--color-text, #f4f3ef);
+  line-height: 1.5;
+}
+
+.edu-card__gpa {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-muted, #9ca396);
+}
+
+.edu-card__gpa strong {
+  color: var(--color-text, #f4f3ef);
+  font-weight: 600;
+}

@@ -7,20 +7,32 @@ export default function AboutMe() {
         "webdev": {
             "number": 1,
             "name": "Web Development",
-            "color": "#3CC74E",
-            "description": "Exploring the latest trends and technologies in web development."
+            "color": "#3dd6a5",
+            "description": "Frontend and backend basics: layouts, APIs, and shipping small apps I can show in a repo or demo."
         },
         "ai": {
             "number": 2,
             "name": "Artificial Intelligence",
-            "color": "#609BFF",
-            "description": "Delving into the world of AI to create smarter solutions."
+            "color": "#5ec8ff",
+            "description": "Using ML and AI tools where they help—models, data, and simple pipelines—not hype for its own sake."
         },
         "programmer": {
             "number": 3,
             "name": "Programming",
-            "color": "#E95D90",
-            "description": "Constantly learning and improving coding skills across various languages."
+            "color": "#ff8fab",
+            "description": "Writing and debugging code in several languages; comfortable reading docs and trying unfamiliar stacks."
+        },
+        "automation": {
+            "number": 4,
+            "name": "Workflow automation (n8n)",
+            "color": "#f0c14a",
+            "description": "Automating repeat work in n8n: call APIs on a schedule, move data between apps, and replace manual copy-paste with flows I can maintain—also how I deliver at PwC."
+        },
+        "homelab": {
+            "number": 5,
+            "name": "Home lab & self-hosting",
+            "color": "#c4a8ff",
+            "description": "A home server for learning and daily use: Docker, networking, backups, and hosting tools I run myself so I understand how they behave under the hood."
         }
     };
     const observer = useRef(
