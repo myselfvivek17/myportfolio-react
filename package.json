@@ -1,7 +1,7 @@
 {
   "name": "myportfolio",
   "version": "0.1.0",
-  "homepage": "https://myselfvivek17.github.io/react-portfolio",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",
