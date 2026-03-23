@@ -22,10 +22,11 @@ const TextArea = () => {
   );
 
   useEffect(() => {
+    const currentObserver = observer.current;
     const elements = document.querySelectorAll('.observe');
-    elements.forEach((el) => observer.current.observe(el));
+    elements.forEach((el) => currentObserver.observe(el));
     return () => {
-      observer.current.disconnect();
+      currentObserver.disconnect();
     };
   }, []);
 

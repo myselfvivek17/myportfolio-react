@@ -48,10 +48,11 @@ export default function AboutMe() {
     );
 
     useEffect(() => {
+        const currentObserver = observer.current;
         const elements = document.querySelectorAll('.data-me');
-        elements.forEach((el) => observer.current.observe(el));
+        elements.forEach((el) => currentObserver.observe(el));
         return () => {
-            observer.current.disconnect();
+            currentObserver.disconnect();
         };
     }, []);
 
