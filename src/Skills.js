@@ -6,22 +6,29 @@ const skillGroups = [
   {
     category: "Languages",
     color: "#3dd6a5",
-    skills: ["Python", "JavaScript", "Java", "Dart", "HTML", "CSS", "SQL"],
+    skills: ["Python", "TypeScript", "JavaScript", "Go", "Java", "Dart", "SQL"],
   },
   {
     category: "Frameworks & Libraries",
     color: "#5ec8ff",
-    skills: ["React", "Flutter", "Spring Boot", "Tkinter", "Bootstrap"],
+    skills: ["FastAPI", "React", "Next.js", "LangGraph", "Flutter", "Spring Boot"],
   },
   {
     category: "Tools & Platforms",
     color: "#f0c14a",
-    skills: ["n8n", "OneTrust", "BigID", "Docker", "Git", "VS Code"],
+    skills: ["Docker", "Qdrant", "MCP", "n8n", "OneTrust", "BigID", "Git"],
   },
   {
     category: "Areas",
     color: "#c4a8ff",
-    skills: ["Privacy (DSAR)", "Automation", "APIs", "GRC", "Web Dev"],
+    skills: [
+      "LLM Agents",
+      "Privacy (DSAR)",
+      "Data Pipelines",
+      "Automation",
+      "APIs",
+      "Self-hosting",
+    ],
   },
 ];
 

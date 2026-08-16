@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import "./Image.css";
 
+// keep in sync with the <pre> below — the gutter counts off these
+const CODE_LINES = 11;
+
 export default function Image() {
   const observer = useRef(
     new IntersectionObserver((entries) => {
@@ -50,11 +53,9 @@ export default function Image() {
             <div className="hero-visual__grid" aria-hidden="true" />
             <div className="hero-visual__accent" aria-hidden="true" />
             <div className="hero-visual__gutter" aria-hidden="true">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <span>5</span>
+              {Array.from({ length: CODE_LINES }, (_, i) => (
+                <span key={i}>{i + 1}</span>
+              ))}
             </div>
             <div className="hero-visual__codeCol">
               <pre className="hero-visual__code">
@@ -82,12 +83,38 @@ export default function Image() {
                   <span className="hero-visual__punct">],</span>
                   {"\n"}
                   <span className="hero-visual__punct">{"});"}</span>
+                  {"\n\n"}
+                  <span className="hero-visual__cmt">
+                    {"// Agents remember across sessions"}
+                  </span>
+                  {"\n"}
+                  <span className="hero-visual__kw">const</span>{" "}
+                  <span className="hero-visual__prop">recall</span>
+                  <span className="hero-visual__punct"> = </span>
+                  <span className="hero-visual__kw">await</span>{" "}
+                  <span className="hero-visual__fn">memory</span>
+                  <span className="hero-visual__punct">.</span>
+                  <span className="hero-visual__fn">search</span>
+                  <span className="hero-visual__punct">({"{"}</span>
+                  {"\n"}
+                  <span className="hero-visual__prop">{"  domain"}</span>
+                  <span className="hero-visual__punct">: </span>
+                  <span className="hero-visual__str">&quot;projects&quot;</span>
+                  <span className="hero-visual__punct">,</span>
+                  {"\n"}
+                  <span className="hero-visual__punct">{"});"}</span>
                 </code>
               </pre>
               <div className="hero-visual__chips" aria-hidden="true">
                 <span className="hero-visual__chip">Python</span>
                 <span className="hero-visual__chip hero-visual__chip--blue">
-                  APIs
+                  FastAPI
+                </span>
+                <span className="hero-visual__chip hero-visual__chip--blue">
+                  MCP
+                </span>
+                <span className="hero-visual__chip hero-visual__chip--gold">
+                  Qdrant
                 </span>
                 <span className="hero-visual__chip hero-visual__chip--gold">
                   GRC

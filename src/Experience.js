@@ -1,6 +1,61 @@
 import React from "react";
 import "./Resume.css";
 
+const roles = [
+  {
+    id: "pwc-associate",
+    org: "PwC",
+    title: "Associate — Cyber Risk & Regulatory",
+    team: "Data Risk & Privacy",
+    dates: "Aug 2025 – Present · Hyderabad",
+    current: true,
+    bullets: [
+      <>
+        Built an internal <strong>MCP server and chat interface over OneTrust</strong>,
+        letting the privacy engineering team query and operate the platform in
+        natural language instead of navigating the console.
+      </>,
+      <>
+        Designed <strong>AI data classification pipelines</strong> that categorise
+        documents across structured, unstructured, and media file types —
+        millions of records across <strong>3 enterprise client engagements</strong>.
+      </>,
+      <>
+        Engineered a data mining pipeline that detects <strong>PII and hardcoded
+        secrets</strong> across heterogeneous client data sources, replacing manual
+        document review.
+      </>,
+      <>
+        Built <strong>n8n and LLM automation</strong> for data mapping, reporting,
+        and evidence collection across engagements.
+      </>,
+    ],
+  },
+  {
+    id: "pwc-intern",
+    org: "PwC",
+    title: "Intern — Data Risk & Privacy",
+    team: "Cyber Risk & Regulatory",
+    dates: "Mar 2025 – Aug 2025 · Bangalore",
+    current: false,
+    bullets: [
+      <>
+        Implemented enterprise privacy tooling in <strong>OneTrust</strong> and{" "}
+        <strong>BigID</strong> — <strong>DSAR</strong> lifecycle workflows and cookie
+        consent configuration across client-facing platforms.
+      </>,
+      <>
+        Performed data source scanning and categorisation to discover and classify
+        sensitive and personal data.
+      </>,
+      <>
+        Authored internal technical and process documentation for privacy
+        workflows, improving onboarding for new team members.
+      </>,
+    ],
+  },
+];
+
 export default function Experience() {
   return (
     <section
@@ -12,35 +67,32 @@ export default function Experience() {
       <h2 className="resume-section__title" id="experience-heading">
         Experience
       </h2>
-      <article className="resume-card">
-        <header className="resume-card__header">
-          <h3 className="resume-card__org">PwC</h3>
-          <p className="resume-card__role">
-            Cyber Risk &amp; Regulatory — Data Risk &amp; Privacy
-          </p>
-        </header>
-        <ul className="resume-card__list">
-          <li>
-            <strong>Internship (6 months)</strong> — March–August 2024. Supported
-            client delivery in Cyber Risk &amp; Regulatory with a focus on data
-            governance, privacy operations, and repeatable workflows.
-          </li>
-          <li>
-            <strong>Apprentice program</strong> — Ongoing through August 2025.
-            Continuing in the same practice area with deeper ownership of
-            automation and GRC tooling.
-          </li>
-        </ul>
-        <p className="resume-card__body" style={{ marginTop: "1rem" }}>
-          I design and maintain automations using <strong>Python</strong>,{" "}
-          <strong>n8n</strong>, and <strong>APIs</strong> so teams spend less time
-          on manual steps and clients can move work forward faster. I have
-          configured and enhanced{" "}
-          <strong>OneTrust</strong> and <strong>BigID</strong>, including{" "}
-          <strong>DSAR</strong> (data subject access request) workflows and{" "}
-          <strong>cookie consent</strong> experiences aligned to client policies.
-        </p>
-      </article>
+      <div className="role-grid">
+        {roles.map((role) => (
+          <article className="resume-card" key={role.id}>
+            <header className="resume-card__header">
+              <div className="resume-card__top">
+                <h3 className="resume-card__org">{role.org}</h3>
+                {role.current && (
+                  <span className="resume-card__badge">
+                    <span className="resume-card__badge-dot" aria-hidden="true" />
+                    Current
+                  </span>
+                )}
+              </div>
+              <p className="resume-card__role">{role.title}</p>
+              <p className="resume-card__dates">
+                {role.team} · {role.dates}
+              </p>
+            </header>
+            <ul className="resume-card__list">
+              {role.bullets.map((bullet, i) => (
+                <li key={`${role.id}-${i}`}>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }

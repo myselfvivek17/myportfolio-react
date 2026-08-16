@@ -1,16 +1,17 @@
 .imgContainer {
   position: relative;
-  width: 50%;
+  width: 100%;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.75rem, 2.5vw, 1.5rem);
+  padding: 0;
   isolation: isolate;
 }
 
 .hero-visual {
   position: relative;
-  width: min(100%, 440px);
+  width: min(100%, 560px);
   max-width: 100%;
   perspective: 1200px;
 }
@@ -183,7 +184,7 @@
   grid-template-columns: auto minmax(0, 1fr);
   align-items: stretch;
   gap: 0;
-  min-height: 11rem;
+  min-height: clamp(11rem, 34vh, 19rem);
   padding: 0.65rem 0 0.65rem 0.5rem;
 }
 

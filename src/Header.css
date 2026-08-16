@@ -91,20 +91,36 @@
   position: relative;
 }
 
-/* Active nav link indicator */
-.align a.nav-link--active {
-  color: var(--color-accent, #3dd6a5);
-}
-
-.align a.nav-link--active::after {
+/* Nav underline. Always in the DOM and scaled 0 → 1 so it wipes in from the
+   left instead of popping into existence when the active section changes. */
+.align a::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   height: 2px;
-  background: var(--color-accent, #3dd6a5);
   border-radius: 1px;
+  background: var(--color-accent, #3dd6a5);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.align a.nav-link--active {
+  color: var(--color-accent, #3dd6a5);
+}
+
+.align a:hover::after,
+.align a:focus-visible::after,
+.align a.nav-link--active::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .align a::after {
+    transition: none;
+  }
 }
 
 #bg {
@@ -122,8 +138,8 @@
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 
-/* Remove the active underline from the Connect CTA button */
-#bg.nav-link--active::after {
+/* The Connect CTA is a filled pill — it never gets the underline */
+#bg::after {
   display: none;
 }
 

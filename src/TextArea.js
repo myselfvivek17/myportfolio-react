@@ -2,7 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import './TextArea.css';
 
-const roles = ['Web Developer', 'Privacy Engineer', 'Automation Builder'];
+const roles = [
+  'privacy engineering',
+  'AI agent systems',
+  'data pipelines',
+  'developer tooling',
+];
 
 const TextArea = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -77,18 +82,23 @@ const TextArea = () => {
       animate="visible"
     >
       <motion.p className="hero__eyebrow" variants={itemVariants}>
-        Computer science · Web development
+        Privacy engineering · AI systems
       </motion.p>
       <motion.h1 className="hero__title hero__title--shimmer" variants={itemVariants}>
         Hi, I&apos;m Vivek
       </motion.h1>
       <motion.section className="hero__roles" variants={itemVariants}>
-        <span className="hero__line">I&apos;m training to become a</span>
+        <span className="hero__line">I work on</span>
         <h2 className="hero__title hero__title--accent">
           {displayText}
           <span className="hero__cursor" aria-hidden="true">|</span>
         </h2>
       </motion.section>
+      <motion.p className="hero__blurb" variants={itemVariants}>
+        Classification pipelines and privacy tooling by day, open-source agent
+        infrastructure the rest of the time. Most of it runs on a home server I
+        maintain myself.
+      </motion.p>
       <motion.div className="hero__cta-row" variants={itemVariants}>
         <a href="#projects" className="hero__cta hero__cta--primary">
           View Projects
@@ -100,6 +110,19 @@ const TextArea = () => {
           Get in Touch
         </a>
       </motion.div>
+      <motion.dl className="hero__meta" variants={itemVariants}>
+        <div className="hero__meta-item">
+          <dt>Currently</dt>
+          <dd>
+            <span className="hero__meta-dot" aria-hidden="true" />
+            Associate at PwC — Data Risk &amp; Privacy
+          </dd>
+        </div>
+        <div className="hero__meta-item">
+          <dt>Based in</dt>
+          <dd>Hyderabad, India</dd>
+        </div>
+      </motion.dl>
     </motion.div>
   );
 };

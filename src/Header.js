@@ -7,27 +7,47 @@ function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  // One scroll handler, not one observer per section. #experience and
+  // #education are nested inside #about, so two or three observers reported
+  // "intersecting" at once and whichever fired last won — the underline jumped
+  // between links. #skills was observed but has no nav link, so scrolling past
+  // it blanked the underline entirely. Walking the ids in document order and
+  // keeping the last one above the nav line fixes both: Skills has no id here,
+  // so it falls through to About.
   useEffect(() => {
-    const sections = ["home", "about", "skills", "experience", "education", "projects", "connect"];
-    const observers = [];
+    // #connect is the footer and its nav entry is the filled Connect pill, which
+    // never takes an underline — tracking it would blank the indicator at the
+    // bottom of the page. Projects stays lit into the footer instead.
+    const ids = ["home", "about", "experience", "education", "projects"];
 
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
+    const pickActive = () => {
+      const navHeight =
+        parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue("--nav-height")
+        ) || 64;
+      const line = navHeight + 24;
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveSection(id);
-          }
-        },
-        { threshold: 0.3, rootMargin: "-80px 0px -40% 0px" }
-      );
-      observer.observe(el);
-      observers.push(observer);
-    });
+      // the last section is often too short to ever cross the line
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+        setActiveSection(ids[ids.length - 1]);
+        return;
+      }
 
-    return () => observers.forEach((obs) => obs.disconnect());
+      let current = ids[0];
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) current = id;
+      });
+      setActiveSection(current);
+    };
+
+    pickActive();
+    window.addEventListener("scroll", pickActive, { passive: true });
+    window.addEventListener("resize", pickActive);
+    return () => {
+      window.removeEventListener("scroll", pickActive);
+      window.removeEventListener("resize", pickActive);
+    };
   }, []);
 
   const links = [

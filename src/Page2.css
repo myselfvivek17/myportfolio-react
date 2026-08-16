@@ -37,9 +37,23 @@
   color: var(--color-muted, #9ca396);
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   line-height: 1.7;
-  max-width: 52rem;
-  margin: 0 0 1.25rem;
+  max-width: 46rem;
+  margin: 0;
   text-wrap: pretty;
+}
+
+/* Two columns of lead copy instead of one narrow measure with dead space
+   beside it. Collapses to one column under 900px. */
+.page2__lead-grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .page2__lead-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
 }
 
 .page2__lead strong {
