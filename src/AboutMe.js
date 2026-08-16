@@ -6,9 +6,9 @@ export default function AboutMe() {
     const interests = {
         "webdev": {
             "number": 1,
-            "name": "Web Development",
+            "name": "Full-stack development",
             "color": "#3dd6a5",
-            "description": "Frontend and backend basics: layouts, APIs, and shipping small apps I can show in a repo or demo."
+            "description": "End to end, not just the front: React and Next.js on top, FastAPI underneath, Docker around it. This site, a market-data terminal, and the interfaces for most of the tools I build."
         },
         "ai": {
             "number": 2,
