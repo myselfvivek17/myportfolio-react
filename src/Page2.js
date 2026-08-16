@@ -25,11 +25,14 @@ export default function Page2() {
             of the console.
           </p>
           <p className="page2__lead">
-            Outside work I ship open source — an <strong>MCP middleware</strong>{" "}
-            that gives any LLM persistent memory, an 8-agent pipeline that turns
-            an API spec into a working MCP server, and a supply-chain watchdog
-            in Go. Most of it runs on a home server I maintain myself. B.Tech
-            CSE from Anurag University, GPA 9.07.
+            Outside work I build and open-source{" "}
+            <strong>developer tools</strong>, usually for a problem I hit
+            myself: a memory layer so an AI assistant remembers your context
+            between sessions, a generator that turns any API into something
+            those assistants can actually call, and a watchdog that catches
+            compromised packages before they install. Most of it runs on a home
+            server I maintain myself — Docker, networking, backups and all.
+            B.Tech CSE from Anurag University.
           </p>
         </div>
         <Skills />

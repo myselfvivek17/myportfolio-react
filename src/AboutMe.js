@@ -24,9 +24,9 @@ export default function AboutMe() {
         },
         "automation": {
             "number": 4,
-            "name": "Workflow automation (n8n)",
+            "name": "Integrations & automation",
             "color": "#f0c14a",
-            "description": "Automating repeat work in n8n: call APIs on a schedule, move data between apps, and replace manual copy-paste with flows I can maintain—also how I deliver at PwC."
+            "description": "Wiring systems together so a job that used to be manual just runs: APIs, scheduled work, and data moving between tools that were never meant to talk. It's how I deliver at PwC and how most of my side projects start."
         },
         "homelab": {
             "number": 5,

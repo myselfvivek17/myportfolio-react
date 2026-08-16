@@ -190,6 +190,14 @@
     grid-template-columns: 1fr 1fr;
     align-items: start;
   }
+
+  /* Certifications is the long list — pin it to the right column across both
+     rows so Education and Hackathons stack beside it instead of leaving a
+     half-empty cell. */
+  .edu-card--tall {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
 }
 
 .edu-card__school {

@@ -2,10 +2,11 @@ import React from "react";
 import "./Resume.css";
 
 const achievements = [
+  { name: "Google Prompt Wars Challenge 2 — Election Sathi", note: "2026" },
+  { name: "IBM Hackathon — AutoMCP agent pipeline", note: "2026" },
   { name: "1st Place, Code It Out Hackathon", note: "Winner" },
   { name: "Lead Representative, Smart India Hackathon", note: "National" },
-  { name: "Google Prompt Wars Challenge 2 — Election Sathi", note: "2026" },
-  { name: "IBM Hackathon — AutoMCP", note: "2026" },
+  { name: "AI Med Quest Hackathon", note: "Participant" },
 ];
 
 const certifications = [
@@ -25,9 +26,9 @@ export default function Education() {
       id="education"
       aria-labelledby="education-heading"
     >
-      <p className="resume-section__eyebrow">Academic</p>
+      <p className="resume-section__eyebrow">Background</p>
       <h2 className="resume-section__title" id="education-heading">
-        Education &amp; Certifications
+        Education &amp; Credentials
       </h2>
       <div className="edu-grid">
         <article className="resume-card">
@@ -42,8 +43,13 @@ export default function Education() {
           <p className="edu-card__gpa">
             GPA: <strong>9.07</strong> / 10
           </p>
+        </article>
 
-          <h4 className="edu-card__subhead">Achievements</h4>
+        {/* Hackathons and competitions aren't coursework — separate card, not a
+            block inside the university one. */}
+        <article className="resume-card">
+          <h3 className="edu-card__school">Hackathons &amp; Competitions</h3>
+          <p className="edu-card__loc">Built and submitted outside of work</p>
           <ul className="cert-list">
             {achievements.map((item) => (
               <li className="cert-list__item" key={item.name}>
@@ -54,7 +60,7 @@ export default function Education() {
           </ul>
         </article>
 
-        <article className="resume-card">
+        <article className="resume-card edu-card--tall">
           <h3 className="edu-card__school">Certifications</h3>
           <p className="edu-card__loc">{certifications.length} completed</p>
           <ul className="cert-list">
